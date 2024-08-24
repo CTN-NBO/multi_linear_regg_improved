@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boston House Price Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            margin-bottom: 0.8px;
+            border-radius: 1.5px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Boston House Price Prediction</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" class="form-control" name="CRIM" placeholder="Crime Rate by Town (CRIM)" required>
+            <input type="text" class="form-control" name="ZN" placeholder="Residential Land Zoned (ZN)" required>
+            <input type="text" class="form-control" name="INDUS" placeholder="Non-Retail Business Acres (INDUS)" required>
+            <input type="text" class="form-control" name="CHAS" placeholder="Charles River Dummy (CHAS)" required>
+            <input type="text" class="form-control" name="NOX" placeholder="Nitric Oxides Concentration (NOX)" required>
+            <input type="text" class="form-control" name="RM" placeholder="Rooms per Dwelling (RM)" required>
+            <input type="text" class="form-control" name="AGE" placeholder="Age of Building (AGE)" required>
+            <input type="text" class="form-control" name="DIS" placeholder="Distances to Employment Centers (DIS)" required>
+            <input type="text" class="form-control" name="RAD" placeholder="Accessibility to Highways (RAD)" required>
+            <input type="text" class="form-control" name="TAX" placeholder="Property Tax Rate (TAX)" required>
+            <input type="text" class="form-control" name="PTRATIO" placeholder="Pupil-Teacher Ratio (PTRATIO)" required>
+            <input type="text" class="form-control" name="B" placeholder="Proportion of Blacks (B)" required>
+            <input type="text" class="form-control" name="LSTAT" placeholder="Lower Status Population (LSTAT)" required>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+        </div>
+          <a href="{{ url_for('eda') }}" class="btn btn-info">Explore EDA</a>
+        </div>
+</body>
+</html>
+</body>
+</html>
