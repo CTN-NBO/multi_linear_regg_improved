@@ -17,3 +17,6 @@
 __pycache__/
 # Ignored by the build system
 /setup.cfg
+mlr.pkl
+boston_data.csv
+scaling.pkl
